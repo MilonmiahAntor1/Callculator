@@ -73,6 +73,17 @@
       font-size: 14px;
       font-weight: bold;
     }
+
+    .earn-btn {
+      padding: 15px 30px;
+      font-size: 18px;
+      font-weight: bold;
+      background: #00c853;
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -83,19 +94,19 @@
 
   <nav>
     <div class="active">
-      <img src="https://i.postimg.cc/T248v1HN/Screenshot-20250619-232311-1-1-1-1-1.png" alt="Home" />
+      <img src="https://i.postimg.cc/T248v1HN/Screenshot-20250619-232311-1-1-1-1-1.png" />
       <span>Home</span>
     </div>
     <div>
-      <img src="https://i.postimg.cc/Y0bYZTxT/Screenshot-20250620-222840-1-1-1-1.png" alt="NFT" />
+      <img src="https://i.postimg.cc/Y0bYZTxT/Screenshot-20250620-222840-1-1-1-1.png" />
       <span>NFT</span>
     </div>
     <div>
-      <img src="https://i.postimg.cc/xCmsrjkh/Screenshot-20250619-232311-1-1-1.png" alt="Earn" />
+      <img src="https://i.postimg.cc/xCmsrjkh/Screenshot-20250619-232311-1-1-1.png" />
       <span>Earn</span>
     </div>
     <div>
-      <img src="https://i.postimg.cc/Wpk4yB5Z/Screenshot-20250620-222840-1-1.png" alt="Friends" />
+      <img src="https://i.postimg.cc/Wpk4yB5Z/Screenshot-20250620-222840-1-1.png" />
       <span>Friends</span>
     </div>
   </nav>
@@ -115,11 +126,41 @@
         if (section === "Home") {
           mainContent.innerHTML =
             `<iframe src="https://calculator111-tau.vercel.app/"></iframe>`;
-        } else {
+        }
+
+        else if (section === "Earn") {
+          mainContent.innerHTML = `
+            <div>
+              <h2>💰 Watch Ad & Earn</h2>
+              <button class="earn-btn" onclick="showAd()">🎯 Watch Ad</button>
+            </div>
+          `;
+        }
+
+        else {
           mainContent.innerHTML = `<h1>${section} Section</h1>`;
         }
       });
     });
+  </script>
+
+  <!-- ✅ Monetag OnClick Popup Script -->
+  <script>
+    (function(s){
+      s.dataset.zone='10450257';
+      s.src='https://al5sm.com/tag.min.js';
+    })([document.documentElement, document.body]
+      .filter(Boolean)
+      .pop()
+      .appendChild(document.createElement('script')));
+  </script>
+
+  <script>
+    function showAd(){
+      if (typeof show_10450257 === "function") {
+        show_10450257(); // Monetag popup
+      }
+    }
   </script>
 
 </body>
